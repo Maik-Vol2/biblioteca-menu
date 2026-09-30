@@ -25,6 +25,26 @@ function crearMenu(configuracion) {
 
 
     // -------------------------------------------------
+    // VALORES PREDETERMINADOS
+    // -------------------------------------------------
+
+    const nombre =
+        configuracion.nombre || "Mi Tienda";
+
+    const colorFondo =
+        configuracion.colorFondo || "#222222";
+
+    const colorTexto =
+        configuracion.colorTexto || "#FFFFFF";
+
+    const colorHover =
+        configuracion.colorHover || "#FF6600";
+
+    const opcionesConfiguradas =
+        configuracion.opciones || [];
+
+
+    // -------------------------------------------------
     // BUSCAR CONTENEDOR
     // -------------------------------------------------
 
@@ -58,25 +78,26 @@ function crearMenu(configuracion) {
     // -------------------------------------------------
 
     menu.style.backgroundColor =
-        configuracion.colorFondo || "#222222";
+        colorFondo;
 
 
     // -------------------------------------------------
     // CREAR NOMBRE DE LA TIENDA
     // -------------------------------------------------
 
-    const nombre =
+    const elementoNombre =
         document.createElement("div");
 
-    nombre.classList.add("nombre-tienda");
+    elementoNombre.classList.add("nombre-tienda");
 
-    nombre.textContent =
-        configuracion.nombre || "Mi Tienda";
+    elementoNombre.textContent =
+        nombre;
 
 
     // Aplicar color al nombre
-    nombre.style.color =
-        configuracion.colorTexto || "#FFFFFF";
+
+    elementoNombre.style.color =
+        colorTexto;
 
 
     // -------------------------------------------------
@@ -95,13 +116,13 @@ function crearMenu(configuracion) {
 
     opciones.style.setProperty(
         "--color-texto",
-        configuracion.colorTexto || "#FFFFFF"
+        colorTexto
     );
 
 
     opciones.style.setProperty(
         "--color-hover",
-        configuracion.colorHover || "#FF6600"
+        colorHover
     );
 
 
@@ -109,34 +130,30 @@ function crearMenu(configuracion) {
     // CREAR OPCIONES
     // -------------------------------------------------
 
-    if (configuracion.opciones) {
+    opcionesConfiguradas.forEach(opcion => {
 
-        configuracion.opciones.forEach(opcion => {
-
-            const enlace =
-                document.createElement("a");
+        const enlace =
+            document.createElement("a");
 
 
-            enlace.textContent =
-                opcion.nombre;
+        enlace.textContent =
+            opcion.nombre;
 
 
-            enlace.href =
-                opcion.ruta;
+        enlace.href =
+            opcion.ruta;
 
 
-            opciones.appendChild(enlace);
+        opciones.appendChild(enlace);
 
-        });
-
-    }
+    });
 
 
     // -------------------------------------------------
     // ARMAR EL MENÚ
     // -------------------------------------------------
 
-    menu.appendChild(nombre);
+    menu.appendChild(elementoNombre);
 
     menu.appendChild(opciones);
 
