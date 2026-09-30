@@ -25,6 +25,11 @@
    ===================================================== */
 
 
+/* =====================================================
+   POSICIÓN DE LA BARRA DE BÚSQUEDA
+   ===================================================== */
+
+
 /* -----------------------------------------
    BÚSQUEDA A LA DERECHA
    ----------------------------------------- */
@@ -48,7 +53,18 @@
 
 
 /* -----------------------------------------
-   ORDEN DE LOS ELEMENTOS
+   BÚSQUEDA AL CENTRO
+   ----------------------------------------- */
+
+.menu.busqueda-centro {
+
+    justify-content: space-between;
+
+}
+
+
+/* -----------------------------------------
+   ORDEN - IZQUIERDA
    ----------------------------------------- */
 
 .menu.busqueda-izquierda .busqueda-menu {
@@ -66,6 +82,56 @@
 
 
 .menu.busqueda-izquierda .opciones-menu {
+
+    order: 3;
+
+}
+
+
+/* -----------------------------------------
+   ORDEN - CENTRO
+   ----------------------------------------- */
+
+.menu.busqueda-centro .nombre-tienda {
+
+    order: 1;
+
+}
+
+
+.menu.busqueda-centro .busqueda-menu {
+
+    order: 2;
+
+}
+
+
+.menu.busqueda-centro .opciones-menu {
+
+    order: 3;
+
+}
+
+
+/* -----------------------------------------
+   ORDEN - DERECHA
+   ----------------------------------------- */
+
+.menu.busqueda-derecha .nombre-tienda {
+
+    order: 1;
+
+}
+
+
+.menu.busqueda-derecha .opciones-menu {
+
+    order: 2;
+
+}
+
+
+.menu.busqueda-derecha .busqueda-menu {
 
     order: 3;
 
