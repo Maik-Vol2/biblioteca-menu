@@ -13,14 +13,63 @@
 
     align-items: center;
 
-    justify-content: space-between;
-
     width: 100%;
 
     padding: 15px 20px;
 
 }
 
+
+/* =====================================================
+   POSICIÓN DE LA BARRA DE BÚSQUEDA
+   ===================================================== */
+
+
+/* -----------------------------------------
+   BÚSQUEDA A LA DERECHA
+   ----------------------------------------- */
+
+.menu.busqueda-derecha {
+
+    justify-content: space-between;
+
+}
+
+
+/* -----------------------------------------
+   BÚSQUEDA A LA IZQUIERDA
+   ----------------------------------------- */
+
+.menu.busqueda-izquierda {
+
+    justify-content: space-between;
+
+}
+
+
+/* -----------------------------------------
+   ORDEN DE LOS ELEMENTOS
+   ----------------------------------------- */
+
+.menu.busqueda-izquierda .busqueda-menu {
+
+    order: 1;
+
+}
+
+
+.menu.busqueda-izquierda .nombre-tienda {
+
+    order: 2;
+
+}
+
+
+.menu.busqueda-izquierda .opciones-menu {
+
+    order: 3;
+
+}
 
 /* -----------------------------------------------------
    NOMBRE DE LA TIENDA

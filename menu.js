@@ -46,6 +46,9 @@ function crearMenu(configuracion) {
     const mostrarBusqueda =
        configuracion.mostrarBusqueda !== false;
 
+    const posicionBusqueda =
+       configuracion.posicionBusqueda || "derecha";
+
 
     // -------------------------------------------------
     // BUSCAR CONTENEDOR
@@ -74,6 +77,10 @@ function crearMenu(configuracion) {
         document.createElement("nav");
 
     menu.classList.add("menu");
+
+    menu.classList.add(
+    `busqueda-${posicionBusqueda}`
+);
 
 
     // -------------------------------------------------
