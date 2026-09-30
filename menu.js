@@ -43,6 +43,9 @@ function crearMenu(configuracion) {
     const opcionesConfiguradas =
         configuracion.opciones || [];
 
+    const mostrarBusqueda =
+       configuracion.mostrarBusqueda !== false;
+
 
     // -------------------------------------------------
     // BUSCAR CONTENEDOR
@@ -113,38 +116,61 @@ function crearMenu(configuracion) {
     // CREAR BARRA DE BÚSQUEDA
     // -------------------------------------------------
     
-    const busqueda =
+let busqueda = null;
+
+if (mostrarBusqueda) {
+
+    busqueda =
         document.createElement("div");
-    
+
     busqueda.classList.add("busqueda-menu");
-    
-    
-    // Campo de búsqueda
+
+
+    // -----------------------------------------
+    // CAMPO DE BÚSQUEDA
+    // -----------------------------------------
+
     const inputBusqueda =
         document.createElement("input");
-    
+
     inputBusqueda.type = "text";
-    
+
     inputBusqueda.placeholder = "Buscar...";
-    
-    inputBusqueda.classList.add("input-busqueda");
-    
-    
-    // Botón de búsqueda
+
+    inputBusqueda.classList.add(
+        "input-busqueda"
+    );
+
+
+    // -----------------------------------------
+    // BOTÓN DE BÚSQUEDA
+    // -----------------------------------------
+
     const botonBusqueda =
         document.createElement("button");
-    
+
     botonBusqueda.type = "button";
-    
+
     botonBusqueda.textContent = "🔍";
-    
-    botonBusqueda.classList.add("boton-busqueda");
-    
-    
-    // Agregar campo y botón
-    busqueda.appendChild(inputBusqueda);
-    
-    busqueda.appendChild(botonBusqueda);
+
+    botonBusqueda.classList.add(
+        "boton-busqueda"
+    );
+
+
+    // -----------------------------------------
+    // ARMAR BARRA DE BÚSQUEDA
+    // -----------------------------------------
+
+    busqueda.appendChild(
+        inputBusqueda
+    );
+
+    busqueda.appendChild(
+        botonBusqueda
+    );
+
+}
 
     // -------------------------------------------------
     // APLICAR COLORES A LAS OPCIONES
@@ -193,7 +219,11 @@ function crearMenu(configuracion) {
 
     menu.appendChild(opciones);
 
+    if (mostrarBusqueda) {
+
     menu.appendChild(busqueda);
+
+}
 
 
     // -------------------------------------------------
