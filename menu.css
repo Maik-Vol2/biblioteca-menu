@@ -74,3 +74,112 @@
     color: var(--color-hover);
 
 }
+
+/* =====================================================
+   BARRA DE BÚSQUEDA
+   ===================================================== */
+
+.busqueda-menu {
+
+    display: flex;
+
+    align-items: stretch;
+
+    height: 36px;
+
+}
+
+
+/* -----------------------------------------
+   CAMPO DE BÚSQUEDA
+   ----------------------------------------- */
+
+.input-busqueda {
+
+    width: 140px;
+
+    height: 18px;
+
+    padding: 8px 10px;
+
+    border: 1px solid #ccc;
+
+    border-right: none;
+
+    border-radius: 6px 0 0 6px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background-color: #ffffff;
+
+    color: #222222;
+
+}
+
+
+/* Texto de ayuda */
+
+.input-busqueda::placeholder {
+
+    color: #777777;
+
+}
+
+
+/* Campo seleccionado */
+
+.input-busqueda:focus {
+
+    border-color: #ccc;
+
+}
+
+
+/* -----------------------------------------
+   BOTÓN DE BÚSQUEDA
+   ----------------------------------------- */
+
+.boton-busqueda {
+
+    width: 38px;
+
+    height: 36px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: 1px solid #ccc;
+
+    border-left: none;
+
+    border-radius: 0 6px 6px 0;
+
+    background-color: #ffffff;
+
+    color: var(--color-hover);
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    line-height: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.boton-busqueda:hover {
+
+    background-color: #f2f2f2;
+
+}

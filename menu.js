@@ -109,6 +109,42 @@ function crearMenu(configuracion) {
 
     opciones.classList.add("opciones-menu");
 
+    // -------------------------------------------------
+    // CREAR BARRA DE BÚSQUEDA
+    // -------------------------------------------------
+    
+    const busqueda =
+        document.createElement("div");
+    
+    busqueda.classList.add("busqueda-menu");
+    
+    
+    // Campo de búsqueda
+    const inputBusqueda =
+        document.createElement("input");
+    
+    inputBusqueda.type = "text";
+    
+    inputBusqueda.placeholder = "Buscar...";
+    
+    inputBusqueda.classList.add("input-busqueda");
+    
+    
+    // Botón de búsqueda
+    const botonBusqueda =
+        document.createElement("button");
+    
+    botonBusqueda.type = "button";
+    
+    botonBusqueda.textContent = "🔍";
+    
+    botonBusqueda.classList.add("boton-busqueda");
+    
+    
+    // Agregar campo y botón
+    busqueda.appendChild(inputBusqueda);
+    
+    busqueda.appendChild(botonBusqueda);
 
     // -------------------------------------------------
     // APLICAR COLORES A LAS OPCIONES
@@ -156,6 +192,8 @@ function crearMenu(configuracion) {
     menu.appendChild(elementoNombre);
 
     menu.appendChild(opciones);
+
+    menu.appendChild(busqueda);
 
 
     // -------------------------------------------------
