@@ -2,64 +2,21 @@
 // BIBLIOTECA DE MENÚ
 // =====================================================
 
-// -----------------------------------------------------
-// CONFIGURACIÓN DEL MENÚ
-// -----------------------------------------------------
-
-const configuracionMenu = {
-
-    // Nombre que aparecerá en el menú
-    nombre: "Krea",
-
-    // Colores del menú
-    colorFondo: "#222222",
-    colorTexto: "#FFFFFF",
-    colorHover: "#FF6600",
-
-    // Opciones del menú
-    opciones: [
-
-        {
-            nombre: "Inicio",
-            ruta: "/"
-        },
-
-        {
-            nombre: "Productos",
-            ruta: "/productos"
-        },
-
-        {
-            nombre: "Catalogo",
-            ruta: "/ofertas"
-        },
-
-        {
-            nombre: "Contacto",
-            ruta: "/contacto"
-        }
-
-    ]
-
-};
-
 
 // =====================================================
-// CREAR MENÚ
+// FUNCIÓN PRINCIPAL
 // =====================================================
 
-function crearMenu() {
+function crearMenu(configuracion) {
 
-    // Buscar el elemento donde colocaremos el menú
-    const contenedor =
-        document.getElementById("mi-menu");
+    // -------------------------------------------------
+    // VALIDAR CONFIGURACIÓN
+    // -------------------------------------------------
 
-
-    // Verificar que exista el contenedor
-    if (!contenedor) {
+    if (!configuracion) {
 
         console.error(
-            "No se encontró el elemento #mi-menu"
+            "No se recibió una configuración para el menú."
         );
 
         return;
@@ -67,7 +24,29 @@ function crearMenu() {
     }
 
 
-    // Crear la barra del menú
+    // -------------------------------------------------
+    // BUSCAR CONTENEDOR
+    // -------------------------------------------------
+
+    const contenedor =
+        document.getElementById("mi-menu");
+
+
+    if (!contenedor) {
+
+        console.error(
+            "No se encontró el elemento #mi-menu."
+        );
+
+        return;
+
+    }
+
+
+    // -------------------------------------------------
+    // CREAR BARRA DEL MENÚ
+    // -------------------------------------------------
+
     const menu =
         document.createElement("nav");
 
@@ -84,7 +63,7 @@ function crearMenu() {
     nombre.classList.add("nombre-tienda");
 
     nombre.textContent =
-        configuracionMenu.nombre;
+        configuracion.nombre || "Mi Tienda";
 
 
     // -------------------------------------------------
@@ -98,23 +77,30 @@ function crearMenu() {
 
 
     // -------------------------------------------------
-    // CREAR CADA OPCIÓN
+    // CREAR OPCIONES
     // -------------------------------------------------
 
-    configuracionMenu.opciones.forEach(opcion => {
+    if (configuracion.opciones) {
 
-        const enlace =
-            document.createElement("a");
+        configuracion.opciones.forEach(opcion => {
 
-        enlace.textContent =
-            opcion.nombre;
+            const enlace =
+                document.createElement("a");
 
-        enlace.href =
-            opcion.ruta;
 
-        opciones.appendChild(enlace);
+            enlace.textContent =
+                opcion.nombre;
 
-    });
+
+            enlace.href =
+                opcion.ruta;
+
+
+            opciones.appendChild(enlace);
+
+        });
+
+    }
 
 
     // -------------------------------------------------
@@ -133,10 +119,3 @@ function crearMenu() {
     contenedor.appendChild(menu);
 
 }
-
-
-// =====================================================
-// EJECUTAR LA BIBLIOTECA
-// =====================================================
-
-crearMenu();
