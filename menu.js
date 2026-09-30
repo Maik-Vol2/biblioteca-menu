@@ -49,6 +49,15 @@ function crearMenu(configuracion) {
     const posicionBusqueda =
        configuracion.posicionBusqueda || "derecha";
 
+    const textoBusqueda =
+    configuracion.textoBusqueda || "Buscar...";
+
+    const anchoBusqueda =
+    configuracion.anchoBusqueda || 180;
+
+    const inputBusqueda =
+    document.createElement("input");
+
 
     // -------------------------------------------------
     // BUSCAR CONTENEDOR
@@ -142,11 +151,15 @@ if (mostrarBusqueda) {
 
     inputBusqueda.type = "text";
 
-    inputBusqueda.placeholder = "Buscar...";
+    inputBusqueda.placeholder =
+    textoBusqueda;
 
     inputBusqueda.classList.add(
         "input-busqueda"
     );
+
+    inputBusqueda.style.width =
+    `${anchoBusqueda}px`;
 
 
     // -----------------------------------------

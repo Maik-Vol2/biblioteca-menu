@@ -24,12 +24,6 @@
    POSICIÓN DE LA BARRA DE BÚSQUEDA
    ===================================================== */
 
-
-/* =====================================================
-   POSICIÓN DE LA BARRA DE BÚSQUEDA
-   ===================================================== */
-
-
 /* -----------------------------------------
    BÚSQUEDA A LA DERECHA
    ----------------------------------------- */
@@ -198,9 +192,17 @@
 
     display: flex;
 
-    align-items: stretch;
+    align-items: center;
 
     height: 36px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
 
 }
 
@@ -211,23 +213,17 @@
 
 .input-busqueda {
 
-    width: 140px;
-
-    height: 18px;
+    height: 34px;
 
     padding: 8px 10px;
 
-    border: 1px solid #ccc;
-
-    border-right: none;
-
-    border-radius: 6px 0 0 6px;
+    border: none;
 
     outline: none;
 
     font-size: 14px;
 
-    background-color: #ffffff;
+    background-color: transparent;
 
     color: #222222;
 
@@ -260,21 +256,17 @@
 
     width: 38px;
 
-    height: 36px;
+    height: 34px;
 
     padding: 0;
 
     margin: 0;
 
-    border: 1px solid #ccc;
+    border: none;
 
-    border-left: none;
+    background-color: transparent;
 
-    border-radius: 0 6px 6px 0;
-
-    background-color: #ffffff;
-
-    color: var(--color-hover);
+    color: #222222;
 
     cursor: pointer;
 
