@@ -19,8 +19,6 @@
 
     padding: 15px 20px;
 
-    background-color: #222222;
-
 }
 
 
@@ -29,8 +27,6 @@
    ----------------------------------------------------- */
 
 .nombre-tienda {
-
-    color: white;
 
     font-size: 20px;
 
@@ -47,6 +43,8 @@
 
     display: flex;
 
+    align-items: center;
+
     gap: 20px;
 
 }
@@ -58,7 +56,7 @@
 
 .opciones-menu a {
 
-    color: white;
+    color: var(--color-texto);
 
     text-decoration: none;
 
@@ -73,6 +71,6 @@
 
 .opciones-menu a:hover {
 
-    color: #FF6600;
+    color: var(--color-hover);
 
 }

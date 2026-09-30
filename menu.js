@@ -54,6 +54,14 @@ function crearMenu(configuracion) {
 
 
     // -------------------------------------------------
+    // APLICAR COLOR DE FONDO
+    // -------------------------------------------------
+
+    menu.style.backgroundColor =
+        configuracion.colorFondo || "#222222";
+
+
+    // -------------------------------------------------
     // CREAR NOMBRE DE LA TIENDA
     // -------------------------------------------------
 
@@ -66,6 +74,11 @@ function crearMenu(configuracion) {
         configuracion.nombre || "Mi Tienda";
 
 
+    // Aplicar color al nombre
+    nombre.style.color =
+        configuracion.colorTexto || "#FFFFFF";
+
+
     // -------------------------------------------------
     // CREAR CONTENEDOR DE OPCIONES
     // -------------------------------------------------
@@ -74,6 +87,22 @@ function crearMenu(configuracion) {
         document.createElement("div");
 
     opciones.classList.add("opciones-menu");
+
+
+    // -------------------------------------------------
+    // APLICAR COLORES A LAS OPCIONES
+    // -------------------------------------------------
+
+    opciones.style.setProperty(
+        "--color-texto",
+        configuracion.colorTexto || "#FFFFFF"
+    );
+
+
+    opciones.style.setProperty(
+        "--color-hover",
+        configuracion.colorHover || "#FF6600"
+    );
 
 
     // -------------------------------------------------
