@@ -31,6 +31,9 @@ function crearMenu(configuracion) {
     const nombre =
         configuracion.nombre || "Mi Tienda";
 
+    const logo =
+        configuracion.logo || "";
+
     const colorFondo =
         configuracion.colorFondo || "#222222";
 
@@ -101,11 +104,62 @@ function crearMenu(configuracion) {
 
 
     // -------------------------------------------------
+    // CREAR LOGO
+    // -------------------------------------------------
+
+    let elementoLogo = null;
+
+    if (logo !== "") {
+
+        elementoLogo =
+            document.createElement("img");
+
+        elementoLogo.src =
+            logo;
+
+        elementoLogo.classList.add(
+            "logo-tienda"
+        );
+
+        elementoLogo.alt =
+            `Logo de ${nombre}`;
+
+    }
+
+    // -------------------------------------------------
     // CREAR NOMBRE DE LA TIENDA
     // -------------------------------------------------
 
     const elementoNombre =
         document.createElement("div");
+
+    // -------------------------------------------------
+    // CONTENEDOR DE LOGO Y NOMBRE
+    // -------------------------------------------------
+
+    const identidad =
+        document.createElement("div");
+
+    identidad.classList.add(
+        "identidad-tienda"
+    );
+
+    // Agregar logo si existe
+
+    if (elementoLogo) {
+    
+        identidad.appendChild(
+            elementoLogo
+        );
+    
+    }
+    
+    
+    // Agregar nombre
+    
+    identidad.appendChild(
+        elementoNombre
+    );
 
     elementoNombre.classList.add("nombre-tienda");
 
@@ -235,7 +289,7 @@ if (mostrarBusqueda) {
     // ARMAR EL MENÚ
     // -------------------------------------------------
 
-    menu.appendChild(elementoNombre);
+    menu.appendChild(identidad);
 
     menu.appendChild(opciones);
 

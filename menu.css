@@ -68,7 +68,7 @@
 }
 
 
-.menu.busqueda-izquierda .nombre-tienda {
+.menu.busqueda-izquierda .identidad-tienda {
 
     order: 2;
 
@@ -111,7 +111,7 @@
    ORDEN - DERECHA
    ----------------------------------------- */
 
-.menu.busqueda-derecha .nombre-tienda {
+.menu.busqueda-derecha .identidad-tienda {
 
     order: 1;
 
@@ -140,6 +140,35 @@
     font-size: 20px;
 
     font-weight: bold;
+
+}
+
+/* -----------------------------------------------------
+   IDENTIDAD DE LA TIENDA
+   ----------------------------------------------------- */
+
+.identidad-tienda {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+/* -----------------------------------------------------
+   LOGO
+   ----------------------------------------------------- */
+
+.logo-tienda {
+
+    width: 40px;
+
+    height: 40px;
+
+    object-fit: contain;
 
 }
 
