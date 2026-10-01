@@ -33,6 +33,18 @@ function crearMenu(configuracion) {
 
     const logo =
         configuracion.logo || "";
+    
+    const alturaMenu =
+        configuracion.alturaMenu || 70;
+    
+    const tamanoLogo =
+        configuracion.tamanoLogo || 40;
+    
+    const tamanoNombre =
+        configuracion.tamanoNombre || 20;
+    
+    const tamanoOpciones =
+        configuracion.tamanoOpciones || 16;
 
     const colorFondo =
         configuracion.colorFondo || "#222222";
@@ -90,6 +102,9 @@ function crearMenu(configuracion) {
 
     menu.classList.add("menu");
 
+    menu.style.minHeight =
+    `${alturaMenu}px`;
+
     menu.classList.add(
     `busqueda-${posicionBusqueda}`
 );
@@ -120,6 +135,12 @@ function crearMenu(configuracion) {
         elementoLogo.classList.add(
             "logo-tienda"
         );
+
+        elementoLogo.style.width =
+        `${tamanoLogo}px`;
+
+        elementoLogo.style.height =
+        `${tamanoLogo}px`;
 
         elementoLogo.alt =
             `Logo de ${nombre}`;
@@ -171,6 +192,9 @@ function crearMenu(configuracion) {
 
     elementoNombre.style.color =
         colorTexto;
+
+    elementoNombre.style.fontSize =
+    `${tamanoNombre}px`;
 
 
     // -------------------------------------------------
@@ -270,6 +294,9 @@ if (mostrarBusqueda) {
 
         const enlace =
             document.createElement("a");
+        
+        enlace.style.fontSize =
+        `${tamanoOpciones}px`;
 
 
         enlace.textContent =
