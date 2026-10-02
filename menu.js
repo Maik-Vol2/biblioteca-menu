@@ -45,6 +45,12 @@ function crearMenu(configuracion) {
     
     const tamanoOpciones =
         configuracion.tamanoOpciones || 16;
+    
+    const fuenteUnica =
+        configuracion.fuenteUnica !== false;
+
+    const fuente =
+        configuracion.fuente || "Arial, sans-serif";
 
     const colorFondo =
         configuracion.colorFondo || "#222222";
@@ -102,12 +108,17 @@ function crearMenu(configuracion) {
 
     menu.classList.add("menu");
 
+    if (fuenteUnica) {
+
+    menu.style.fontFamily =
+        fuente;
+
     menu.style.minHeight =
     `${alturaMenu}px`;
 
     menu.classList.add(
     `busqueda-${posicionBusqueda}`
-);
+    );
 
 
     // -------------------------------------------------
@@ -333,4 +344,5 @@ if (mostrarBusqueda) {
 
     contenedor.appendChild(menu);
 
+    }
 }
